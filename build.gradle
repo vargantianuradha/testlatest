@@ -1,0 +1,3 @@
+plugins {
+    id 'nebula.release' version '15.0.0' // or current latest
+}
