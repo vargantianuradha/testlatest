@@ -1,4 +1,3 @@
-
 //tag::nebula-release[]
 plugins {
     id 'nebula.nebula-release' version '4.0.1' // <1>
