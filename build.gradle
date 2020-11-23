@@ -1,1 +1,99 @@
 
+//tag::nebula-release[]
+plugins {
+    id 'nebula.nebula-release' version '4.0.1' // <1>
+}
+
+//end::nebula-release[]
+
+//tag::nebula-project[]
+plugins {
+    id 'nebula.project' version '3.2.1' // <1>
+}
+
+//end::nebula-project[]
+
+//tag::java[]
+project.group = nexusGroup //<1>
+project.description = 'Semantic versioning'
+
+//end::java[]
+
+//tag::java[]
+apply plugin: 'java' // <2>
+
+//end::java[]
+
+//tag::nebula-project[]
+apply plugin: 'nebula.project' // <2>
+
+//end::nebula-project[]
+
+//tag::java[]
+repositories { //<3>
+    jcenter()
+}
+
+//end::java[]
+
+//tag::publishing[]
+publishing { // <1>
+
+    repositories { // <2>
+        maven {
+            url "http://${nexusHost}/content/repositories/${nexusRepo}-${project.version.toString().endsWith('-SNAPSHOT') ? 'snapshots' : 'releases'}"
+            // <3>
+            credentials {
+                username "${nexusUser}"
+                password "${nexusPassword}"
+            }
+        }
+        mavenLocal()
+    }
+}
+
+//end::publishing[]
+
+//tag::nebula-release[]
+apply plugin: 'nebula.nebula-release' // <2>
+
+release { // <3>
+    // Let the default versioning strategy be the maven style -SNAPSHOT, instead of nebula's devSnapshot
+    defaultVersionStrategy = org.ajoberstar.gradle.git.release.opinion.Strategies.SNAPSHOT
+}
+
+tasks.release.finalizedBy tasks.publish // <4>
+
+//end::nebula-release[]
+
+       attributes 'build-gradle': new File('build.gradle'),
+                'source-highlighter': 'highlightjs',
+                'highlightjs-theme': 'github',
+                'sourceDir': '../../main/java',
+                'rootDir': '../../../',
+                'setanchors': 'true',
+                'idprefix': '',
+                'idseparator': '-',
+                'docinfo1': 'true',
+                'docVersion': project.version.toString()
+    }
+
+}
+
+task(generateHtml5, type: AsciiDoctorDefault) { // <5>
+    dependsOn jrubyPrepareGems
+    gemPath jrubyPrepareGems.outputDir
+    backends 'html5'
+}
+
+task(generatePdf, type: AsciiDoctorDefault) { // <6>
+    dependsOn jrubyPrepareGems
+    gemPath jrubyPrepareGems.outputDir
+    backends 'pdf'
+}
+
+//end::asciidoctor[]
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.0.0'
+}
