@@ -1,8 +1,1 @@
-project.group = nexusGroup (1)
-project.description = 'Semantic versioning'
 
-apply plugin: 'java' (2)
-
-repositories { (3)
-    jcenter()
-}
