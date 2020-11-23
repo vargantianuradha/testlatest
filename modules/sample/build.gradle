@@ -6,11 +6,3 @@ dependencies {
 	compileOnly group: "jstl", name: "jstl", version: "1.2"
 	compileOnly group: "org.osgi", name: "osgi.cmpn", version: "6.0.0"
 }
-project.group = CoK (1)
-project.description = 'Semantic versioning'
-
-apply plugin: 'java' (2)
-
-repositories { (3)
-    jcenter()
-}
