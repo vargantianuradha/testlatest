@@ -34,7 +34,7 @@ public class SamplePortlet extends MVCPortlet {
 	@Override
 	public void doView(RenderRequest renderRequest, RenderResponse renderResponse)
 			throws IOException, PortletException {
-	System.out.println("nexustest118844444555666777::::::::::::");
+	System.out.println("nexustesttoday::::::::::::");
 		super.doView(renderRequest, renderResponse);
 	}
 }
