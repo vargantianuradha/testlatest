@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-
-<portlet-preferences>
-	<preference>
-		<name>iFidsUrl</name>
-		<value>http://xmlfltdata.ifids.com/EDIOutput/EDIAirportXMLData.aspx?apt=YGK&#38;pwd=fr89KN1</value>
-	</preference>
-</portlet-preferences>
