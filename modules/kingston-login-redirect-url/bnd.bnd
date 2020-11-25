@@ -1,0 +1,5 @@
+Bundle-Name: kingston-login-redirect-url
+Bundle-SymbolicName: ca.cityofkingston.login.redirect.portlet
+Bundle-Version: 1.0.0
+Export-Package: ca.cityofkingston.login.redirect.portlet.constants
+Import-Package: javax.portlet;version="[2,4)",*

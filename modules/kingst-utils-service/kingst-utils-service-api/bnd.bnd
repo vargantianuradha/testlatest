@@ -1,0 +1,9 @@
+Bundle-Name: kingst-utils-service-api
+Bundle-SymbolicName: ca.cityofkingston.kingstonUtils.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	ca.cityofkingston.kingstonUtils.exception,\
+	ca.cityofkingston.kingstonUtils.model,\
+	ca.cityofkingston.kingstonUtils.service,\
+	ca.cityofkingston.kingstonUtils.service.persistence
+-includeresource: META-INF/service.xml=../kingst-utils-service-service/service.xml

@@ -1,0 +1,176 @@
+section[id*="portlet_Payments"] table { 
+    width: 100%; 
+}
+
+section[id*="kingstonpaymentsportlet"] legend {
+    font-size: 1.6em;
+    font-weight: normal;
+    margin-top: 10px;
+}
+
+section[id*="portlet_Payments"] fieldset {
+    width: 400px;
+    max-width: 100%;
+	
+}
+
+section[id*="kingstonpaymentsportlet"] legend {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 10px;
+  width:auto;  
+ }
+section[id*="kingstonpaymentsportlet"] fieldset {
+    border: 1px solid #bfbfbf;
+    padding: 8px;
+}
+
+section[id*="portlet_Payments"] fieldset table {  
+	
+	overflow:hidden;
+}
+
+section[id*="portlet_Payments"] fieldset input ,  
+section[id*="portlet_Payments"]   select ,  
+section[id*="portlet_Payments"]   input[type="submit"] ,  
+section[id*="portlet_Payments"] fieldset .formselect  {   
+    border-color: #e7e7ed;
+    border-style: solid;
+    border-width: .0625rem .0625rem .0625rem .0625rem;
+    height: 2.2rem;
+    min-width: 0;  
+    display: block;
+    padding: .5rem .5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #272833;
+    background-color: #f1f2f5; 
+    border-radius: .25rem;
+    box-shadow: none;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+   vertical-align: middle;
+	width: auto;
+	display: inline-block;
+	MARGIN-BOTTOM: 5PX;
+}
+
+section[id*="portlet_Payments"]   input[structure="number"] ,
+section[id*="portlet_Payments"]   .formselect  { display:inline-block;}
+
+section[id*="portlet_Payments"]   input[type="submit"] {   
+    display: inline-block;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .2375rem .9375rem;
+    font-size: 1rem;
+    line-height: 1;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out; 
+    color: #FFF;
+    background-color: #0059A3;
+    border-color: #0059A3;
+    box-shadow: none;  
+	font-size: 1rem;
+	MARGIN-BOTTOM: 5PX;
+}
+ 
+
+section[id*="portlet_Payments"]  div[class*="link"]  a ,
+section[id*="portlet_Payments"]   a.product-item{
+    background: no-repeat center left;
+    background-image: url(/o/kingston-theme/images/common/arrow-bullet@2.png);
+    background-position: 0 .75em;
+    background-size: 4px;
+    padding: 5px 0 0 15px;
+	color:#0059A3;
+}
+
+section[id*="portlet_Payments"]  fieldset {
+    border: 1px solid #acc1d3;
+    padding: 10px;
+	border-radius: .25rem;
+}
+section[id*="portlet_Payments"] legend {
+    display: inline-block;
+	font-size: 1em;
+	width: auto;
+	background: #fff;
+	padding: 5px;
+	font-weight: bold;
+}
+
+section[id*="portlet_Payments"] legend + br {
+    display: none;
+}
+
+section[id*="portlet_Payments"] h2 {
+    margin-top: 10px;
+}
+section[id*="portlet_Payments"]   output { display:inline; }
+section[id*="portlet_Payments"] > div {
+    width: 100% !important;
+}
+@media(min-width:768px) {
+section[id*="portlet_Payments"]  .payment-label  {
+    width: 25%;
+    display: inline-block;
+} 
+section[id*="portlet_Payments"]  .payment-label + input ,
+section[id*="portlet_Payments"]  .payment-label + input[type="hidden"] + input {
+    width: auto;
+    display: inline-block;
+}
+
+section[id*="portlet_Payments"] #divExtensions fieldset {
+    width: 100%;
+    max-width: 100%;
+	
+}
+section[id*="portlet_Payments"] #divExtensions .payment-label {
+    display: inline-block;
+	width: 25%;
+}
+section[id*="portlet_Payments"] #divExtensions input {
+    width: auto;
+    display: inline-block;
+}
+section[id*="portlet_Payments"] input[name="ParkingPermitNumber"] {
+    clear: both;
+    display: inline-block !important;
+}
+section[id*="portlet_Payments"] #ctl46_btnSearch {
+    margin-left: 33%;
+}
+section[id*="portlet_Payments"] #ctl46_btnSubmit { margin-left: 25%; }
+section[id*="portlet_Payments"] .b-right {
+    text-align: left;
+}
+}
+@media(max-width:767px) {
+section[id*="portlet_Payments"] input  {
+    margin-bottom:5px;
+}
+section[id*="portlet_Payments"] td {
+    display: block;
+    text-align: left;
+}
+
+section[id*="portlet_Payments"] fieldset {
+    max-width: 80%;
+	width: 96%;
+}
+
+}
+
+ol.breadcrumb {
+        margin-left: 10px !important;
+    }
+@media only screen and (max-width: 767px) {
+    ol.breadcrumb {
+        margin-left: 20px !important;
+    }
+}

@@ -1,0 +1,4 @@
+Bundle-Name: CustomCalendarHook
+Bundle-SymbolicName: customcalendarhook
+Bundle-Version: 1.0.0
+Fragment-Host: com.liferay.calendar.web;bundle-version="3.0.30"

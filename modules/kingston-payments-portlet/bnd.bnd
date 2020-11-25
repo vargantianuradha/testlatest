@@ -1,0 +1,5 @@
+Bundle-Name: kingston-payments-portlet
+Bundle-SymbolicName: ca.cityofkingston.payments
+Bundle-Version: 1.0.0
+Export-Package: ca.cityofkingston.payments.constants
+-metatype: *

@@ -1,0 +1,125 @@
+{
+    "availableLanguageIds": [
+        "en_US"
+    ],
+    "defaultLanguageId": "en_US",
+    "fields": [
+        {
+            "label": {
+                "en_US": "Event State"
+            },
+            "options": [
+                {
+                    "value": "finished",
+                    "label": {
+                        "en_US": "Event Finished"
+                    }
+                },
+                {
+                    "value": "inProgress",
+                    "label": {
+                        "en_US": "Event in Progress"
+                    }
+                },
+                {
+                    "value": "preEvent",
+                    "label": {
+                        "en_US": "Pre-Event"
+                    }
+                }
+            ],
+            "predefinedValue": {
+                "en_US": [
+                    ""
+                ]
+            },
+            "style": {
+                "en_US": ""
+            },
+            "tip": {
+                "en_US": "Change this field when you begin and end a live event."
+            },
+            "dataType": "string",
+            "indexType": "",
+            "localizable": true,
+            "multiple": false,
+            "name": "eventState",
+            "readOnly": false,
+            "repeatable": false,
+            "required": true,
+            "showLabel": true,
+            "type": "select"
+        },
+        {
+            "label": {
+                "en_US": "Event Description"
+            },
+            "predefinedValue": {
+                "en_US": ""
+            },
+            "style": {
+                "en_US": ""
+            },
+            "tip": {
+                "en_US": ""
+            },
+            "dataType": "html",
+            "fieldNamespace": "ddm",
+            "indexType": "",
+            "localizable": true,
+            "name": "eventInfo",
+            "readOnly": false,
+            "repeatable": false,
+            "required": false,
+            "showLabel": true,
+            "type": "ddm-text-html"
+        },
+        {
+            "label": {
+                "en_US": "Event Url"
+            },
+            "predefinedValue": {
+                "en_US": ""
+            },
+            "style": {
+                "en_US": ""
+            },
+            "tip": {
+                "en_US": "Use the URL provided by Chatroll to the event"
+            },
+            "dataType": "string",
+            "indexType": "",
+            "localizable": true,
+            "name": "iframeUrl",
+            "readOnly": false,
+            "repeatable": false,
+            "required": true,
+            "showLabel": true,
+            "type": "text"
+        },
+        {
+            "label": {
+                "en_US": "Post-Event message"
+            },
+            "predefinedValue": {
+                "en_US": ""
+            },
+            "style": {
+                "en_US": ""
+            },
+            "tip": {
+                "en_US": "When the event is finished, this text is displayed instead of the chat module."
+            },
+            "dataType": "html",
+            "fieldNamespace": "ddm",
+            "indexType": "",
+            "localizable": true,
+            "name": "postEventMessage",
+            "readOnly": false,
+            "repeatable": false,
+            "required": false,
+            "showLabel": true,
+            "type": "ddm-text-html"
+        }
+    ]
+}

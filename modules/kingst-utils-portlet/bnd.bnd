@@ -1,0 +1,9 @@
+Bundle-Name: kingst-utils-portlet
+Bundle-SymbolicName: ca.cityofkingston.kingstonUtils.event
+Bundle-Version: 1.0.0
+Export-Package: ca.cityofkingston.kingstonUtils.event.constants
+Import-Package:\
+    \
+    *
+-sources: true
+Include-Resource:\

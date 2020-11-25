@@ -1,0 +1,255 @@
+<%--
+/**
+ * Copyright (c) 2000-present Liferay, Inc. All rights reserved.
+ *
+ * This library is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU Lesser General Public License as published by the Free
+ * Software Foundation; either version 2.1 of the License, or (at your option)
+ * any later version.
+ *
+ * This library is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
+ * details.
+ */
+--%>
+
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.*"%>
+
+<div class="portlet-blogs">
+<c:if test="<%= BlogsEntryPermission.contains(permissionChecker, entry, ActionKeys.VIEW) %>">
+
+		<c:choose>
+			<c:when
+				test='<%= displayStyle.equals("kingston-mcp-blog-aggregator") %>'>
+				<div class="blog-aggregator blog-entry entry-content">
+			</c:when>
+			<c:otherwise>
+			</c:otherwise>
+		</c:choose>
+	 
+		<%
+		PortletURL showErrorMessageURL = renderResponse.createRenderURL();
+
+		showErrorMessageURL.setParameter("mvcRenderCommandName", "/blogs_aggregator/view");
+		showErrorMessageURL.setParameter("blogsPortletFound", Boolean.FALSE.toString());
+
+		StringBundler sb = new StringBundler(5);
+
+		sb.append(themeDisplay.getPathMain());
+		sb.append("/blogs/find_entry?p_l_id=");
+		sb.append(themeDisplay.getPlid());
+		sb.append("&noSuchEntryRedirect=");
+		sb.append(URLCodec.encodeURL(showErrorMessageURL.toString()));
+		sb.append("&entryId=");
+		sb.append(entry.getEntryId());
+
+		String viewEntryURL = sb.toString();
+		%>
+		<div class="widget-mode-simple">
+			<div class="widget-mode-simple-entry">
+			<c:if test='<%= !displayStyle.endsWith("-without-title") %>'>
+			 
+				<c:choose>
+				
+				<c:when
+							test='<%= displayStyle.equals("kingston-blog-aggregator") %>'>
+
+							<div class="autofit-row widget-topbar">
+								<div class="autofit-col autofit-col-expand">
+									<h3 class="title">
+										<aui:a href="<%= viewEntryURL %>"><%= HtmlUtil.escape(entry.getTitle()) %></aui:a>
+									</h3>
+								</div>
+							</div>
+
+						</c:when>
+					<c:otherwise>
+							<span class="entry-title"><a href="<%= viewEntryURL %>"><%= HtmlUtil.escape(entry.getTitle()) %></a></span>
+						</c:otherwise>
+					</c:choose>
+					
+					
+				<c:choose>	
+					<c:when
+							test='<%= displayStyle.equals("kingston-mcp-blog-aggregator") %>'>
+							<span class="entry-author"><liferay-ui:message
+									key="written-by" /> <a href="<%= viewEntryURL %>"><%= HtmlUtil.escape(entry.getUserName()) %></a></span>
+							<span class="entry-date"><liferay-ui:message key="on" />
+								<%= dateFormatDate.format(entry.getDisplayDate()) %></span>
+						</c:when>
+					<c:otherwise>
+							<div class="autofit-row widget-metadata">
+								<%  SimpleDateFormat formatter = new SimpleDateFormat("MMM dd, yyyy"); 
+  								String strDate= formatter.format(entry.getDisplayDate());  %>
+								<div class="text-secondary">
+									<%=strDate%>
+								</div>
+								<div class="text-truncate-inline">
+									<liferay-ui:message key="written-by" />&nbsp;
+									<a href="<%= viewEntryURL %>"><%= HtmlUtil.escape(entry.getUserName()) %></a>
+								</div>
+							</div>
+						</c:otherwise>
+					</c:choose>
+					<span class="entry-categories"> <liferay-ui:asset-categories-summary
+							className="<%= BlogsEntry.class.getName() %>"
+							classPK="<%= entry.getEntryId() %>" />
+					</span>
+					<c:if test="<%= showTags %>">
+						<span class="entry-tags"> <liferay-ui:asset-tags-summary
+								className="<%= BlogsEntry.class.getName() %>"
+								classPK="<%= entry.getEntryId() %>" />
+						</span>
+					</c:if>
+					</c:if>
+			</div>
+		</div>
+		<c:if test='<%= !displayStyle.equals("title") && !displayStyle.equals("kingston-mcp-blog-aggregator")%>'>
+
+			<div class="entry-body">
+
+				<c:choose>
+					<c:when test='<%= displayStyle.endsWith("image") %>'>
+						<liferay-ui:user-portrait
+							userId="<%= entry.getUserId() %>"
+						/>
+
+						<div class="entry-info text-muted ">
+							<small>
+								<strong><%= HtmlUtil.escape(entry.getUserName()) %></strong>
+
+								<span> - </span>
+								<span class="hide-accessible"><liferay-ui:message key="published-date" /></span>
+								<%= dateFormatDate.format(entry.getDisplayDate()) %>
+							</small>
+						</div>
+					</c:when>
+					<c:otherwise>
+					
+					</c:otherwise>
+				</c:choose>
+				
+				<c:choose>
+					<c:when test='<%= displayStyle.startsWith("abstract") %>'>
+
+						<%
+						String smallImageURL = HtmlUtil.escape(entry.getSmallImageURL(themeDisplay));
+						%>
+
+						<c:if test="<%= Validator.isNotNull(smallImageURL) %>">
+							<div class="asset-small-image">
+								<img alt="" class="asset-small-image" src="<%= smallImageURL %>"
+									width="150" />
+							</div>
+						</c:if>
+
+						<%
+						String summary = entry.getDescription();
+
+						if (Validator.isNull(summary)) {
+							summary = entry.getContent();
+						}
+						%>
+
+						<p>
+							<%= StringUtil.shorten(HtmlUtil.stripHtml(summary), 200) %>
+						</p>
+					</c:when>
+					<c:when test='<%= displayStyle.startsWith("quote") %>'>
+						<span class="quote"> <a href="<%= viewEntryURL %>">
+								&quot;<%= StringUtil.shorten(StringUtil.trim(HtmlUtil.stripHtml(entry.getContent())), 100, StringPool.BLANK) + StringPool.TRIPLE_PERIOD %>
+								&quot;
+						</a>
+						</span>
+					</c:when>
+				<c:otherwise>
+						<div class="widget-content">
+							<%= StringUtil.shorten(HtmlUtil.stripHtml(entry.getContent()), 400)%>
+							<br> <a href="<%= viewEntryURL %>"> More </a>
+						</div>
+					</c:otherwise>
+				</c:choose>
+			</div> 
+			<c:if test='<%= displayStyle.equals("kingston-blog-aggregator") %>'>
+
+				<portlet:renderURL var="bookmarkURL"
+					windowState="<%= WindowState.NORMAL.toString() %>">
+					<portlet:param name="mvcRenderCommandName"
+						value="/blogs/view_entry" />
+					<portlet:param name="urlTitle" value="<%= entry.getUrlTitle() %>" />
+				</portlet:renderURL>
+			</c:if>
+			
+			<%
+			int commentsCount = BlogsUtil.getCommentsCount(entry);
+			%>
+			<div class="entry-footer">
+				<div class="entry-social">
+					<div class="comments">
+						<a href="<%= viewEntryURL %>">
+							<i class="icon-comment icon-monospaced"></i>
+
+							<span><%= String.valueOf(commentsCount) %></span>
+						</a>
+					</div>
+				</div>
+		</c:if>
+
+	</c:if>
+</div>
+						 
+<style>
+section[id*="liferay_blogs_web_portlet_BlogsAgreggatorPortlet"] .autofit-col.autofit-col-expand .portlet-title {
+  display: none; }
+
+section[id*="liferay_blogs_web_portlet_BlogsAgreggatorPortlet"] .widget-content p {
+  margin-bottom: .5rem; }
+
+section[id*="liferay_blogs_web_portlet_BlogsAgreggatorPortlet"] .widget-mode-simple .widget-toolbar {
+  margin-top: .5rem;
+  margin-bottom: 1.5rem; }
+
+section[id*="liferay_blogs_web_portlet_BlogsAgreggatorPortlet"] .title a {
+  font-size: 30px;
+  text-decoration: none; }
+
+section[id*="liferay_blogs_web_portlet_BlogsAgreggatorPortlet"] .autofit-row.widget-metadata .inline-item-before {
+  display: none; }
+
+section[id*="liferay_blogs_web_portlet_BlogsAgreggatorPortlet"] .text-truncate-inline .text-truncate {
+  color: #0059a3; }
+
+section[id*="liferay_blogs_web_portlet_BlogsAgreggatorPortlet"] .autofit-col.autofit-col-expand * {
+  display: inline-block; }
+
+section[id*="liferay_blogs_web_portlet_BlogsAgreggatorPortlet"] .text-truncate-inline  {
+  float: right;
+   margin-left: 5px;  
+  color: #0059a3;
+  font-weight: bold;
+}
+section[id*="liferay_blogs_web_portlet_BlogsAgreggatorPortlet"] .text-truncate-inline a {
+  color: #0059a3;
+  text-decoration: none;
+}
+section[id*="liferay_blogs_web_portlet_BlogsAgreggatorPortlet"] .autofit-float.widget-toolbar .btn-outline-borderless {
+  padding: 0;
+  margin-bottom: 10px;
+  color: #0059a3;
+  text-decoration: none;
+  font-weight: normal; }
+
+section[id*="liferay_blogs_web_portlet_BlogsAgreggatorPortlet"] .autofit-float.widget-toolbar .btn-outline-borderless .inline-item-before {
+  display: none; }
+
+section[id*='portlet_com_liferay_blogs_web_portlet_BlogsAgreggatorPortlet'] .widget-mode-detail-header h3 {
+  border-bottom: 1px solid #c8c9ca;
+  color: #555;
+  font-size: 2.2em !important;
+  font-weight: normal; }
+section[id*="liferay_blogs_web_portlet_BlogsAgreggatorPortlet"] .text-truncate-inline a {
+}
+
+</style>						 

@@ -1,0 +1,4 @@
+Bundle-Name: kingston-staff-directory-portlet
+Bundle-SymbolicName: ca.cityofkingston.staffdirectory
+Bundle-Version: 1.0.0
+Export-Package: ca.cityofkingston.staffdirectory.constants

@@ -1,0 +1,39 @@
+<%@page import="java.util.Date"%>
+<%@page import="ca.cityofkingston.calendarevent.event.CalendarEvent"%>
+<%@page import="ca.cityofkingston.calendarevent.event.CalendarEventView"%>
+<%@page import="ca.cityofkingston.calendarevent.CalendarEventPortlet"%>
+
+
+ <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
+
+<portlet:defineObjects />
+<%
+CalendarEventView calendarEventView = (CalendarEventView) request.getAttribute(CalendarEventPortlet.CALENDAREVENT);
+long eventCount = 0;
+for (int i = 0; i < calendarEventView.getEvents().size(); i++) {
+	if (calendarEventView.getEvents().get(i).size() == 0){
+		break;
+	}
+	%>
+	<div class="calendar-event-list page<%=(i+1)%> ">
+	<% 
+	for (int j = 0; j < calendarEventView.getEvents().get(i).size(); j++){
+		CalendarEvent event = calendarEventView.getEvents().get(i).get(j); 
+		eventCount++;
+		if(event.getStatus() == 0 ) {
+		 %>
+		<div id="event-<%=eventCount%>" class="calendar-event <%=calendarEventView.isFirstOrLastEvent(i, j)%> clearfix>">
+			<%=calendarEventView.buildEventIcon(event)%>
+			<%=calendarEventView.buildEventTitle(event.getCalendarBooking(),event.getCalendarBooking().getTitle(request.getLocale()))%>
+			<%=calendarEventView.buildEventAbstract(event.getCalendarBooking()) %>
+			<%=calendarEventView.buildEventDescription(event, configuration.getCalendarLayoutURL(), request, configuration.isShowStatus()) %>
+		</div></div>
+		<%
+		}
+		}
+	%>
+	</div>
+	<%
+}
+%>
+

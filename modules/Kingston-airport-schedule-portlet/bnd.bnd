@@ -1,0 +1,8 @@
+Bundle-Name: Kingston-airport-schedule-portlet
+Bundle-SymbolicName: ca.cityofkingston.portlet.airport
+Bundle-Version: 1.0.0
+Export-Package: ca.cityofkingston.portlet.airport.constants
+-jsp: *.jsp,*.jspf
+-plugin.bundle: com.liferay.ant.bnd.resource.bundle.ResourceBundleLoaderAnalyzerPlugin
+-plugin.jsp: com.liferay.ant.bnd.jsp.JspAnalyzerPlugin
+-sources: true

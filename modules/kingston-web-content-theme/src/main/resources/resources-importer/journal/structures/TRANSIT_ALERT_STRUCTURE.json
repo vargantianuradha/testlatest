@@ -1,0 +1,304 @@
+{
+    "availableLanguageIds": [
+        "en_US"
+    ],
+    "defaultLanguageId": "en_US",
+    "fields": [
+        {
+            "label": {
+                "en_US": "headline"
+            },
+            "predefinedValue": {
+                "en_US": ""
+            },
+            "style": {
+                "en_US": ""
+            },
+            "tip": {
+                "en_US": ""
+            },
+            "dataType": "string",
+            "indexType": "",
+            "localizable": true,
+            "name": "headline",
+            "readOnly": false,
+            "repeatable": false,
+            "required": false,
+            "showLabel": true,
+            "type": "text"
+        },
+        {
+            "label": {
+                "en_US": "Select affected routes"
+            },
+            "options": [
+                {
+                    "value": "Transit_RouteIcons-WhiteBG_501.png",
+                    "label": {
+                        "en_US": "Express 501"
+                    }
+                },
+                {
+                    "value": "Transit_RouteIcons-WhiteBG_502.png",
+                    "label": {
+                        "en_US": "Express 502"
+                    }
+                },
+                {
+                    "value": "Route601-WBG.png",
+                    "label": {
+                        "en_US": "Express 601"
+                    }
+                },
+                {
+                    "value": "Route602-WBG.png",
+                    "label": {
+                        "en_US": "Express 602"
+                    }
+                },
+                {
+                    "value": "Route701-WBG.png",
+                    "label": {
+                        "en_US": "Express 701"
+                    }
+                },
+                {
+                    "value": "Route702-WBG.png",
+                    "label": {
+                        "en_US": "Express 702"
+                    }
+                },
+                {
+                    "value": "Route801-WBG.png",
+                    "label": {
+                        "en_US": "Express 801"
+                    }
+                },
+                {
+                    "value": "Route802-WBG.png",
+                    "label": {
+                        "en_US": "Express 802"
+                    }
+                },
+                {
+                    "value": "Transit_RouteIcons-WhiteBG_01.png",
+                    "label": {
+                        "en_US": "Route 1"
+                    }
+                },
+                {
+                    "value": "Transit_RouteIcons-WhiteBG_02.png",
+                    "label": {
+                        "en_US": "Route 2"
+                    }
+                },
+                {
+                    "value": "Transit_RouteIcons-WhiteBG_03.png",
+                    "label": {
+                        "en_US": "Route 3"
+                    }
+                },
+                {
+                    "value": "Transit_RouteIcons-WhiteBG_04.png",
+                    "label": {
+                        "en_US": "Route 4"
+                    }
+                },
+                {
+                    "value": "Route06-WBG.png",
+                    "label": {
+                        "en_US": "Route 6"
+                    }
+                },
+                {
+                    "value": "Transit_RouteIcons-WhiteBG_07.png",
+                    "label": {
+                        "en_US": "Route 7"
+                    }
+                },
+                {
+                    "value": "Transit_RouteIcons-WhiteBG_10.png",
+                    "label": {
+                        "en_US": "Route 10"
+                    }
+                },
+                {
+                    "value": "Transit_RouteIcons-WhiteBG_11.png",
+                    "label": {
+                        "en_US": "Route 11"
+                    }
+                },
+                {
+                    "value": "Transit_RouteIcons-WhiteBG_12.png",
+                    "label": {
+                        "en_US": "Route 12"
+                    }
+                },
+                {
+                    "value": "Transit_RouteIcons-WhiteBG_12A.png",
+                    "label": {
+                        "en_US": "Route 12a"
+                    }
+                },
+                {
+                    "value": "Transit_RouteIcons-WhiteBG_14.png",
+                    "label": {
+                        "en_US": "Route 14"
+                    }
+                },
+                {
+                    "value": "Transit_RouteIcons-WhiteBG_15.png",
+                    "label": {
+                        "en_US": "Route 15"
+                    }
+                },
+                {
+                    "value": "Transit_RouteIcons-WhiteBG_16.png",
+                    "label": {
+                        "en_US": "Route 16"
+                    }
+                },
+                {
+                    "value": "Route17a-WBG.png",
+                    "label": {
+                        "en_US": "Route 17a"
+                    }
+                },
+                {
+                    "value": "Route17d-WBG.png",
+                    "label": {
+                        "en_US": "Route 17d"
+                    }
+                },
+                {
+                    "value": "Route17p-WBG.png",
+                    "label": {
+                        "en_US": "Route 17p"
+                    }
+                },
+                {
+                    "value": "Route17w-WBG.png",
+                    "label": {
+                        "en_US": "Route 17w"
+                    }
+                },
+                {
+                    "value": "Transit_RouteIcons-WhiteBG_18.png",
+                    "label": {
+                        "en_US": "Route 18"
+                    }
+                },
+                {
+                    "value": "Transite_RouteIcon-WhiteBG_18q.png",
+                    "label": {
+                        "en_US": "Route 18q"
+                    }
+                },
+                {
+                    "value": "Transit_RouteIcons-WhiteBG_19.png",
+                    "label": {
+                        "en_US": "Route 19"
+                    }
+                },
+                {
+                    "value": "Route20-WBG.png",
+                    "label": {
+                        "en_US": "Route 20"
+                    }
+                }
+            ],
+            "predefinedValue": {
+                "en_US": []
+            },
+            "style": {
+                "en_US": ""
+            },
+            "tip": {
+                "en_US": "Select one or more bus routes affected by this alert. (CTRL Click)"
+            },
+            "dataType": "string",
+            "indexType": "",
+            "localizable": true,
+            "multiple": true,
+            "name": "affectedRoutes",
+            "readOnly": false,
+            "repeatable": false,
+            "required": true,
+            "showLabel": true,
+            "type": "select"
+        },
+        {
+            "label": {
+                "en_US": "Alert Details"
+            },
+            "predefinedValue": {
+                "en_US": ""
+            },
+            "style": {
+                "en_US": ""
+            },
+            "tip": {
+                "en_US": "Enter the alert details. You can use images, links etc."
+            },
+            "dataType": "html",
+            "fieldNamespace": "ddm",
+            "indexType": "text",
+            "localizable": true,
+            "name": "details",
+            "readOnly": false,
+            "repeatable": false,
+            "required": true,
+            "showLabel": true,
+            "type": "ddm-text-html"
+        },
+        {
+            "label": {
+                "en_US": "mapTitle"
+            },
+            "predefinedValue": {
+                "en_US": "View Map"
+            },
+            "style": {
+                "en_US": ""
+            },
+            "tip": {
+                "en_US": "Map title to appear in button"
+            },
+            "dataType": "string",
+            "indexType": "",
+            "localizable": true,
+            "name": "mapTitle",
+            "readOnly": false,
+            "repeatable": true,
+            "required": false,
+            "showLabel": true,
+            "type": "text",
+            "nestedFields": [
+                {
+                    "label": {
+                        "en_US": "mapImage"
+                    },
+                    "predefinedValue": {
+                        "en_US": ""
+                    },
+                    "style": {
+                        "en_US": ""
+                    },
+                    "tip": {
+                        "en_US": ""
+                    },
+                    "dataType": "image",
+                    "fieldNamespace": "ddm",
+                    "indexType": "",
+                    "localizable": true,
+                    "name": "mapImage",
+                    "readOnly": false,
+                    "repeatable": false,
+                    "required": false,
+                    "showLabel": true,
+                    "type": "ddm-image"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+Bundle-Name: kingston-login-hook
+Bundle-SymbolicName: com.liferay.cityofkingston.events
+Bundle-Version: 1.0.0
+Export-Package: com.liferay.cityofkingston.events.constants
+Import-Package:\
+    !org.junit.*,\
+    !org.mockito.*,\
+    !org.powermock.api.mockito.*,\
+    !org.powermock.core.classloader.annotations.*,\
+    !org.powermock.modules.junit4.*,\
+    \
+    *
+-sources: true
+Include-Resource:\

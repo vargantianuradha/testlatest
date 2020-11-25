@@ -1,0 +1,4 @@
+Bundle-Name: Kingston-docs-portlet
+Bundle-SymbolicName: ca.cityofkingston.document.portlet
+Bundle-Version: 1.0.0
+Export-Package: ca.cityofkingston.portlets.constants

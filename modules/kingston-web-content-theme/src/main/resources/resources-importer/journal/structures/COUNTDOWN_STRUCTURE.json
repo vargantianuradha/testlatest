@@ -1,0 +1,54 @@
+{
+    "availableLanguageIds": [
+        "en_US"
+    ],
+    "defaultLanguageId": "en_US",
+    "fields": [
+        {
+            "label": {
+                "en_US": "Description"
+            },
+            "predefinedValue": {
+                "en_US": ""
+            },
+            "style": {
+                "en_US": ""
+            },
+            "tip": {
+                "en_US": "This is the countdown description"
+            },
+            "dataType": "string",
+            "indexType": "",
+            "localizable": true,
+            "name": "preamble",
+            "readOnly": false,
+            "repeatable": false,
+            "required": true,
+            "showLabel": true,
+            "type": "text"
+        },
+        {
+            "label": {
+                "en_US": "Countdown to Date"
+            },
+            "predefinedValue": {
+                "en_US": ""
+            },
+            "style": {
+                "en_US": ""
+            },
+            "tip": {
+                "en_US": "MUST be in format YYYY/MM/DD hh:mm:ss"
+            },
+            "dataType": "string",
+            "indexType": "",
+            "localizable": true,
+            "name": "countdownDate",
+            "readOnly": false,
+            "repeatable": false,
+            "required": true,
+            "showLabel": true,
+            "type": "text"
+        }
+    ]
+}

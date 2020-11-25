@@ -1,0 +1,9 @@
+Bundle-Name: Kingston-staff-directory-service-api
+Bundle-SymbolicName: ca.cityofkingston.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	ca.cityofkingston.exception,\
+	ca.cityofkingston.model,\
+	ca.cityofkingston.service,\
+	ca.cityofkingston.service.persistence
+-includeresource: META-INF/service.xml=../Kingston-staff-directory-service-service/service.xml

@@ -1,0 +1,6 @@
+Bundle-Name: kingston-media-gallery-portlet
+Bundle-SymbolicName: ca.cityofkingston.media.gallery.portlet
+Bundle-Version: 1.0.0
+Export-Package: ca.cityofkingston.constants
+Include-Resource:\
+@com.liferay.dynamic.data.mapping.api-5.2.0.jar!/com/liferay/dynamic/data/mapping/util/DDMDisplay.class
