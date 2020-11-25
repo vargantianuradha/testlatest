@@ -1,6 +1,0 @@
-Bundle-Name: kingston-liferay-hook
-Bundle-SymbolicName: ca.cityofkingston.hooks
-Bundle-Version: 1.0.0
-Import-Package:\
-	!org.apache.*,\
- 	*

@@ -1,1 +1,0 @@
-create index IX_F6E3066F on dir_people (last[$COLUMN_LENGTH:75$], first[$COLUMN_LENGTH:75$]);

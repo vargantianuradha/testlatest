@@ -1,5 +1,0 @@
-Bundle-Name: kingston-navigation-portlet
-Bundle-SymbolicName: ca.cityofkingston.navigation
-Bundle-Version: 1.0.0
-Export-Package: ca.cityofkingston.navigation.constants
--metatype: *

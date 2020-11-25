@@ -1,5 +1,0 @@
-Bundle-Name: kingston-web-form-model-listener
-Bundle-SymbolicName: com.liferay.cityofkingston.webform
-Bundle-Version: 1.0.0
-Export-Package: com.liferay.cityofkingston.webform.constants
-Import-Package: !aQute.bnd.osgi, !com.swabunga.*, !net.fortuna.ical4j.*, !org.apache.axis.*,!org.apache.poi.*,*,\

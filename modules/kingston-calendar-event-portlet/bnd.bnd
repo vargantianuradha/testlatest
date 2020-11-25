@@ -1,4 +1,0 @@
-Bundle-Name: kingston-calendar-event-portlet
-Bundle-SymbolicName: ca.cityofkingston.calendarevent
-Bundle-Version: 1.0.0
-Export-Package: ca.cityofkingston.calendarevent.constants
